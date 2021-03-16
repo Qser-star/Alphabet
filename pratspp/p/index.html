@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="style.css" type="text/css" rel="stylesheet">
+
+    </head> 
+<body>
+
+<audio id="Aa">
+  <source src="audio/A.ogg" type="audio/ogg">
+  <source src="audio/A.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.  
+</audio>
+
+<audio id="Bb">
+    <source src="audio/B.ogg" type="audio/ogg">
+    <source src="audio/B.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.  
+  </audio>
+
+<p>Click the buttons to play or pause the audio.</p>
+
+<button onclick="playAudio()" type="button">Play Audio</button>
+<button onclick="pauseAudio()" type="button">Pause Audio</button> 
+
+<main>
+    <div class="content" >
+        <button class="letter" id="Aa" type="button" onclick="playAudio('Aa')">
+            <p>
+                Aa
+            </p>
+        </button>
+        <button class="letter" id="Bb" type="button" onclick="playAudio('Bb')">
+            <p>
+                Bb
+            </p>
+        </button>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <div class="contnt" >
+        <div class="left-content">
+
+        </div>
+        <div class="right-content">
+
+        </div>
+    </div>
+
+
+</main>
+
+<footer>
+    <a>
+        dd
+    </a>
+</footer>
+
+       
+
+        <script src="script.js"></script>
+ 
+    
+</body>
+</html>

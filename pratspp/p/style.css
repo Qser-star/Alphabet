@@ -1,0 +1,51 @@
+.letter{
+    background-color: aqua;
+    height: 100px;
+    width: 100px;
+}
+
+.content{
+    margin: auto;
+    background-color: coral;
+    max-width: 800px;
+    min-width: 800px; 
+    min-height: 500px;   
+}
+
+.left-content{
+    float: left;
+    max-width: 400px;
+    background-color: gray;
+    min-width: 400px;
+    min-height: 300px;
+}
+
+
+.rignt-content{
+    
+    max-width: 400px;
+    background-color:lawngreen;
+    min-width: 400px;
+    min-height: 300px;
+}
+
+
+footer {
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 180px;
+  }
+
+  footer {
+    text-align: center;
+    background: #222;
+    z-index: 0;
+  }
+  footer a {
+    border-bottom: 1px solid #666;
+    color: #eee;
+    font: 24px/180px serif;
+    text-decoration: none;
+  }
