@@ -1,13 +1,18 @@
+<!DOCTYPE html>
 <html>
     <head>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+          <meta content="utf-8" http-equiv="encoding">
+
         <link href="stylecss.css" type="text/css" rel="stylesheet">
     </head>
     <body>
         <header>
             <div class="header-content">
-                <img src="logo.png">
-            
-
+                
+                Англійський алфавіт для дітей
+                <p>(Тестовий режим)</p>
+                <br>
             <div class="menu">
                 <button type="button" id="1" onclick="window.location.href='main.html'">
                     Main
@@ -21,59 +26,111 @@
                 <button type="button" id="4" onclick="window.location.href='game2.html'">
                     Game 2
                 </button>
+            
             </div>
         </div>
         </header>
         <main>
-            <br><br><br>
-        <center>
-            <div class="control">
-                <button type="button">
-                     <p>
-                        Say
-                     </p>
-                </button>
-            </div>
-        </center>
-        <br><br><br>
-            <center>
-            <div class="letter">
-                <button type="button">
-                    <p>
-                        
-                    </p>
-                </button>
-            </div>
-            <div class="letter">
-                <button type="button">
-                    <p>
-                        
-                    </p>
-                </button>
-            </div>
-            <div class="letter">
-                <button type="button">
-                    <p>
-                        
-                    </p>
-                </button>
-            </div>
-        </center>
-        <br><br><br>
-        <center>
-            <div class="control">
-                <button type="button">
-                 <p>
-                    Reset
-                 </p>
-                </button>
-             </div>
-        </center>
+          <div class="game2" id="game">
+              <button type="button" id="startGame" onclick="playgame()"> play</button>
+          </div>
         </main>
         <br><br><br>
         <footer>
             
         </footer>
+        <script>
+              
+        
+        var arrLett = new Array();
+        arrLett[0] = 'Aa';
+        arrLett[1] = 'Bb';
+        arrLett[2] = 'Cc';
+        arrLett[3] = 'Dd';
+        arrLett[4] = 'Ee';
+        arrLett[5] = 'Ff';
+        arrLett[6] = 'Gg';
+        arrLett[7] = 'Hh';
+        arrLett[8] = 'Ii';
+        arrLett[9] = 'Jj';
+        arrLett[10] = 'Kk';
+        arrLett[11] = 'Ll';
+        arrLett[12] = 'Mm';
+        arrLett[13] = 'Nn';
+        arrLett[14] = 'Oo';
+        arrLett[15] = 'Pp';
+        arrLett[16] = 'Qq';
+        arrLett[17] = 'Rr';
+        arrLett[18] = 'Ss';
+        arrLett[19] = 'Tt';
+        arrLett[20] = 'Uu';
+        arrLett[21] = 'Vv';
+        arrLett[22] = 'Ww';
+        arrLett[23] = 'Xx';
+        arrLett[24] = 'Yy';
+        arrLett[25] = 'Zz';
+    
+        function playAudio() { 
+        
+        var audio = new Audio('audio/' + gameLett +'.mp3');
+        audio.play();
+        }
+        var gameLett, gameLettFull;
 
+        function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        }
+        let arrGame;
+        function playgame(){
+            var l1, l2, l3;
+            l1 = Math.floor(Math.random() * 26);
+            l2 = Math.floor(Math.random() * 26);
+            l3 = Math.floor(Math.random() * 26);
+            
+            while(true)
+            {
+                if(l1 == l2 || l1 == l3){
+                    l1 = Math.floor(Math.random() * 26);
+                }
+                if(l2 == l3 || l2 == l1){
+                    l2 = Math.floor(Math.random() * 26);
+                }
+                if(l3 == l2 || l3 == l1){
+                    l3 = Math.floor(Math.random() * 26);
+                }
+                if(l1 != l2 && l2 != l3){
+                    break;
+                }
+                
+            }
+            arrGame = [l1, l2, l3];
+            shuffle(arrGame);
+            
+            gameLett = arrLett[arrGame[Math.floor(Math.random() * 3)]];
+            gameLettFull =gameLett;
+            gameLett = gameLett.substring(0, gameLett.length-1);
+            game.insertAdjacentHTML('beforeend', '<button type="button" onclick="playAudio()"> Say</button>');
+            startGame.remove();
+            game.insertAdjacentHTML("beforeend", `<div class="answear">
+                <button type="button" onclick="checkLett(0)" class="letter"> ` + arrLett[arrGame[0]] + `</button> 
+                <button type="button" onclick="checkLett(1)" class="letter"> ` + arrLett[arrGame[1]] + `</button> 
+                <button type="button" onclick="checkLett(2)" class="letter"> ` + arrLett[arrGame[2]] + `</button> 
+                </div>`);
+        }
+
+        function checkLett(id){
+            
+            let t = arrLett[arrGame[id]];
+            
+            if(gameLettFull == t){
+                playgame();
+            }
+        }
+
+        </script>
     </body>
 </html>

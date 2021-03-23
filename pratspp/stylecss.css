@@ -4,20 +4,20 @@
 }
 
 :root {
-  --header-bg-color: #f9de59;
-  --header-text-color: black;
+  --header-bg-color: #b8f840;
+  --header-text-color: rgb(0, 0, 0);
   --header-button-color: #c33124;
   --header-button-border-color: #000000;
   --footer-bg-color: #c33124;
   --footer-text-color: black;
-  --main-letter-color: #a1dffb;
-  --main-bg-color: #D5EDE1;
+  --main-letter-color: #bee8fc;
+  --main-bg-color: #ffffff;
   --main-text-color: black;
-  --center-bg-color: #f98365;
+  --center-bg-color: #e8a628;
 }
 body
 {
-  background: linear-gradient(to left, #e8a628 , #f98365 20%, #f98365 80%, #e8a628);
+  background: linear-gradient(to left, #f98365 , #e8a628 20%, #e8a628 80%, #f98365);
 }
  header {
     padding-top: 10px;
@@ -34,14 +34,17 @@ body
   }
 
   .header-content{
-    text-align: right;
-    
+    text-align: left;
   }
   .header-content img{
     max-width: 150px;
     max-height: 150px;
     float: left;
     padding: 10px;
+  }
+  .header-content p
+  {
+    font-size: 16px;
   }
   .menu
   {
@@ -51,7 +54,7 @@ body
     display: table;
   }
   .menu button{
-      width: 33.3%;
+      width: 33.3333333333333%;
     background-color:var(--header-button-color); 
   border: 1px solid var(--header-button-border-color);
   color: var(--header-text-color); 
@@ -153,13 +156,14 @@ footer
 }
 
 .letter:hover{
-  border-color: blue;
+  border-color: rgb(253, 0, 0);
 }
 
 .control button
 {
   background: var(--main-letter-color);
   color: var(--main-text-color);
+  size: 50px;
   width: 300px;
   height: 100px;
 }
@@ -205,3 +209,9 @@ center
   font-size: 24px;
   margin-bottom: 5px;
 }
+
+.txt p
+{
+  font-size: 18pt;
+}
+
